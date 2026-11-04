@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <title>UMT Lepak Cafe</title>
+</head>
+<body>
+
+    <!--Header: Name of the Cafe and also slogan-->
+    <div id="header">
+        <h1>UMT Lepak Cafe&reg; <span>- Freshly Baked Daily!</span></h1>
+    </div>
+
+    <!--Links navigating to other page-->
+    <div id="nav">
+        <a href="#">Home</a> | 
+        <a href="#">Menu</a> | 
+        <a href="#">Contact Us</a>
+    </div>
+
+    <!-- Content: -->
+    <div id="content">
+        
+        <!--Block and inline elements-->
+        <p>Welcome to the <strong>Campus Bakery</strong>. We offer the best pastries on campus. If you are looking for <em>something sweet</em>, you must try our <span style="color: brown;">signature brownies</span>. Please <a href="#order-form">place your pre-order below</a>.</p>
+        
+        <h2>Pre-Order Form</h2>
+        
+        <!--Form for order-->
+        <div>
+            <form oninput="calculateTotal()">
+                <p>
+                    <label for="name">Customer Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required autofocus>
+                </p>
+                
+                <p>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </p>
+                
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </p>
+
+                <p>
+                    <label for="pickupdate">Pick-up Date:</label>
+                    <input type="date" id="pickupdate" name="pickupdate">
+                </p>
+
+                <p>
+                    <label for="pickuptime">Pick-up Time:</label>
+                    <input type="time" id="pickuptime" name="pickuptime">
+                </p>
+
+                <p>
+                    <label for="flavour">Flavour:</label>
+                    <input list="flavours" id="flavour" name="flavour">
+                    <datalist id="flavours">
+                        <option value="Chocolate">
+                        <option value="Vanilla">
+                        <option value="Strawberry">
+                        <option value="Matcha">
+                    </datalist>
+                </p>
+
+                <p>
+                    <label for="icing">Icing Colour:</label>
+                    <input type="color" id="icing" name="icing">
+                </p>
+
+                <p>
+                    <label for="sweetness">Sweetness Level (1-5):</label>
+                    <input type="range" id="sweetness" name="sweetness" min="1" max="5" step="1">
+                </p>
+
+                <!--Calculation of prices-->
+                <h3>Calculate Your Total</h3>
+                <p>
+                    <label for="cupcakes">Cupcakes (RM 3.00 each):</label>
+                    <input type="number" id="cupcakes" min="0" value="0">
+                </p>
+                <p>
+                    <label for="slices">Cake Slices (RM 5.00 each):</label>
+                    <input type="number" id="slices" min="0" value="0">
+                </p>
+                
+                <p>
+                    <strong>Total Price: RM </strong>
+                    <output name="totalPrice" for="cupcakes slices"></output>
+                </p>
+
+                <p>
+                    <input type="submit" value="Submit Order">
+                </p>
+            </form>
+        </div>
+
+    </div>
+
+    <!--Sidebar to show menu prices-->
+    <div id="sidebar">
+        <h2>Price List of UMT Lepak Cafe&reg;</h2>
+        <ul>
+            <li>Cupcake: RM 3.00</li>
+            <li>Cake Slice: RM 5.00</li>
+            <li>Orders worth &gt; RM30 get a free drink</li>
+            <li>Prices in &#82; are subject to change</li>
+        </ul>
+    </div>
+
+    <!--Footer -->
+    <div id="footer">
+        <p>&copy; 2026 UMT Lepak Cafe&reg;. All rights reserved. Contact us: islahhass@UMTLepakCafe.com</p>
+    </div>
+
+    <!--Javascript for calculator-->
+    <script>
+        function calculateTotal() {
+            //Read the values from the input
+            var qtyCupcakes = Number(document.getElementById("cupcakes").value);
+            var qtySlices = Number(document.getElementById("slices").value);
+            
+            //Formula to calculate the total
+            var total = (qtyCupcakes * 3) + (qtySlices * 5);
+            
+            //Display result in the output element
+            document.querySelector('output[name="totalPrice"]').value = total.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
+
+<!--Testing Observation:
+ The system doesn't allow the user to leave the field empty as it's been marked as required. As for the email field, the system checks if the the key "@" is included before allowing the user to proceed as again, it has been marked as required.  -->

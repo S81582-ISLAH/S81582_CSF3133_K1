@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Campus Cinema - Book Ticket</title>
+</head>
+<!-- Error 1 (Line 1): Missing html at the <!DOCTYPE> declaration -->
+<!-- Error 2 (Line 42): Missing required condition so that user is required to include the email in its proper formatting to include "@" -->
+<!-- Error 3 (Line 22): The position of closure for <h1> is misplaced with closure of <span>, the latter should be closed first before the former.  -->
+<!-- Error 4 (Line 32): Section meant for content used <span> instead of <div> -->
+<!-- Error 5 (Line 34): "<" sign is reserved and cannot be used directly, '&lt;' should be used instead. Also, &amp is missing a semicolon. -->
+<!-- Error 6 (Line 37): JavaScript adds string instead of number, need a different function to add number. -->
+<!-- Error 7 (Line 42): Input type should be email instead of emial. -->
+<!-- Error 8 (Line 23): Movies list does not match its datalist. -->
+<!-- Error 9 (Line 69): The slider for min and max is misplaced backwards. -->
+<!-- Error 10 (Line 74): The line for="adult kid" does not match the input id="child". -->
+<!-- Error 11 (Line 82): &Copy; is uppercase which is wrong, it should be lower case. -->
+<!-- Error 12 (Line 97): Duplicate of closing tags </body> and </html> at the end of the file -->
+<body>
+    <!--Header: Name of the cinema-->
+    <div id="header">
+        <h1>e-Ticket <span>Your Campus Cinema</span></h1>
+    </div>
+
+    <!--Nav: Links to navigate between the two pages-->
+    <div id="nav">
+        <a href="index.html">Now Showing</a> | 
+        <a href="booking.html">Book Tickets</a>
+    </div>
+    
+    <!--Content: Main ticket booking form-->
+    <div id="content">
+        <h2>Book Your Ticket</h2>
+        <p>Promotion: tickets &lt; RM10 for students &amp; staff!</p>
+        
+        <!--Form: User inputs for booking tickets-->
+        <form action="booking.php" oninput="calcTotals()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required autofocus><br>
+            
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <!--Phone and Show Time inputs-->
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 012-3456789" required><br>
+            
+            <label for="date">Show date:</label>
+            <input type="date" id="date" name="date"><br>
+
+            <label for="time">Show time:</label>
+            <input type="time" id="time" name="time"><br>
+            
+            <label for="movie">Movie:</label>
+            <input id="movie" name="movie" list="movies"><br>
+            <datalist id="movies">
+                <option value="Space Rangers">
+                <option value="Kampung Comedy">
+                <option value="Midnight Mystery">
+            </datalist>
+            
+            <label for="adult">Adult tickets:</label>
+            <input type="number" id="adult" name="adult" value="0"><br>
+            
+            <label for="child">Child tickets:</label>
+            <input type="number" id="child" name="child" value="0"><br>
+            
+            <label for="rating">Rate our service:</label>
+            <input type="range" id="rating" name="rating" min="1" max="5"><br>
+            
+            Total tickets: <output name="total" for="adult child"></output><br>
+            
+            <!--Output: Element to show calculated total price-->
+            Total price (RM): <output name="price" for="adult child"></output><br>
+            
+            <input type="submit" value="Book Now">
+        </form>
+    </div>
+    
+    <!--Footer: Copyright and entities-->
+    <div id="footer">
+        <p>&copy; 2026 e-Ticket&reg; &ndash; Campus Cinema &lt; RM10 every Tuesday</p>
+    </div>
+
+    <!--Javascript: Function to calculate both total tickets and total price-->
+    <script>
+        function calcTotals() {
+            let adultQty = Number(document.getElementById("adult").value);
+            let childQty = Number(document.getElementById("child").value);
+            
+            document.querySelector('output[name="total"]').value = adultQty + childQty;
+            
+            let totalPrice = (adultQty * 12) + (childQty * 8);
+            document.querySelector('output[name="price"]').value = totalPrice;
+        }
+    </script>
+</body>
+</html>

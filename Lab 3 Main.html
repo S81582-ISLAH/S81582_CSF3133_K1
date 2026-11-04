@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lab 3</title>
+</head>
+<body>
+
+    <div>
+        <h1>My Website <span>Welcome to my page</span></h1>
+    </div>
+
+    <div>
+        <div>
+            <form>
+                <p>Email: <input type="email" name="email"></p>
+                <p>Date: <input type="date" name="date"></p>
+                <p>Satisfaction: <input type="range" name="satisfaction" min="1" max="10"></p>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div>
+            <input type="number" id="num1" oninput="calc()">
+            +
+            <input type="number" id="num2" oninput="calc()">
+            =
+            <output id="sum" for="num1 num2"></output>
+        </div>
+    </div>
+
+    <div>
+        <p>Contact: test@test.com &copy; 2026</p>
+    </div>
+
+    <script>
+        function calc() {
+            var n1 = Number(document.getElementById("num1").value);
+            var n2 = Number(document.getElementById("num2").value);
+            document.getElementById("sum").value = n1 + n2;
+        }
+    </script>
+
+</body>
+</html>
