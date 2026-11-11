@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Hari Raya Wishes</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        header {
+            background-color: #8e44ad;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        header h1 {
+            text-decoration: overline underline; 
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Selamat Hari Raya to Our Indian Friends</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#media-section">Watch Video</a></li>
+            <li><a href="#form-section">Send Wishes</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        
+        <section id="media-section">
+            <h2>Festive Greetings Video</h2>
+            <article>
+                <p>Wishing everyone celebrating a joyous and prosperous festival. Watch our special festive greeting video below. The video is embedded responsively to ensure it looks great on both desktop and mobile devices.</p>
+                <br>
+                <figure>
+                    <div class="video-container">
+                        <video controls>
+                            <source src="upinipin.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <figcaption>Figure 1: Festive Video Message</figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <section id="form-section">
+            <h2>Raya Contact Form</h2>
+            <article>
+                <form action="#" method="POST">
+                    
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Gender:</label>
+                            <div class="inline-group">
+                                <input type="radio" id="male" name="gender" value="male" required>
+                                <label for="male">Male</label>
+                                
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Female</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Favorite Festive Activities:</label>
+                            <div class="inline-group">
+                                <input type="checkbox" id="visiting" name="activities" value="visiting">
+                                <label for="visiting">Visiting Friends</label>
+                                
+                                <input type="checkbox" id="food" name="activities" value="food">
+                                <label for="food">Enjoying Food</label>
+                                
+                                <input type="checkbox" id="decorating" name="activities" value="decorating">
+                                <label for="decorating">Decorating</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit">Send Wishes</button>
+
+                </form>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Selamat Hari Raya to the Indian Community.</p>
+    </footer>
+
+</body>
+</html>
