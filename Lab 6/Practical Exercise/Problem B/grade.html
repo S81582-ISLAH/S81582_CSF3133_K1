@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="style.css"> <!-- Extension 9: Linked new CSS file -->
+</head>
+<body>
+    <h2>Student Grade Calculator</h2>
+    
+    <!-- Error 1 Fix: Added 'return' to onsubmit to prevent page reload -->
+    <form name="gradeForm" onsubmit="return checkMark()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="mark">Mark (0-100):</label>
+        <!-- Error 2 Fix: Changed type="text" to type="number" -->
+        <input type="text" id="mark" name="mark"><br>
+        <button type="submit">Check Grade</button>
+    </form>
+    
+    <p id="result"></p>
+    <p id="dateOutput"></p> <!-- Extension 8: Added container for date/time -->
+
+    <div class="controls">
+        <!-- Extension 7: Added Random Mark button -->
+        <button onclick="generateRandomMark()">Random Mark</button>
+        <button onclick="showTable()">Show Grade Table</button>
+    </div>
+
+    <div id="tableContainer"></div>
+
+    <script src="grade.js"></script>
+</body>
+</html>
